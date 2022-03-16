@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width",initial-scale=1.0>
+	<link rel="stylesheet" href="style.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400&display=swap" rel="stylesheet">
+	<title>dev.finance$</title>
+</head>
+
+<body>
+	<header>
+		<img src="./assets/logo.svg" alt="dev.finance$ logo.">
+	</header>
+
+	<main>
+		<img src="assets/blank.png" alt="Balanço" class="blank">
+		<section id="balance">
+
+		<div class="card">
+			<h3>
+				<span>Entradas</span>
+				<img src="assets/income.svg" alt="Imagem de entradas">
+			</h3>
+			<p id="income">R$ 0,00</p> <!-- the number into the id is so the user won't ask for it by accident. -->
+		</div>
+
+		<div class="card">
+			<h3>
+				<span>Saídas</span>
+				<img src="assets/expense.svg" alt="Imagem de saídas">
+			</h3>
+			<p id="expense">R$ 0,00</p>
+		</div>
+
+		<div id="total-card" class="card">
+			<h3>
+				<span>Total</span>
+				<img src="assets/total.svg" alt="Imagem de totais">
+			</h3>
+			<p id="total">R$ 0,00</p>
+		</div>
+		</section>
+
+		<section id="transaction">
+		<img src="assets/blank.png" alt="Transações" class="blank">
+		<a onclick="modal()" href="#" class="button new">+ Nova transação</a>
+		<table id="data-table">
+			<thead>
+				<tr>
+					<th>Descrição</th>
+					<th>Valor</th>
+					<th>Data</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		</section>
+	</main>
+
+	<div class="modal-overlay">
+		<div class="modal">
+			<div id="form">
+				<h2>Nova Transação</h2>
+				<form action="" onsubmit="submit_transaction(event)">
+
+					<div class="input-group">
+						<img src="assets/blank.png" alt="Descrição" class="blank">
+						<input type="text" id="description" name="description" placeholder="Descrição"/>
+					</div>
+
+					<div class="input-group">
+						<img src="assets/blank.png" alt="Descrição" class="blank">
+						<input type="text" id="amount" name="amount" placeholder="0,00"/>
+						<small>Use o sinal negativo (-) para despesas e virgula (,) para casas decimais.</small>
+					</div>
+
+					<div class="input-group">
+						<img src="assets/blank.png" alt="Data" class="blank">
+						<input type="date" id="date" name="date"/>
+					</div>
+
+					<div class="input-group actions">
+						<a href="#" onclick="modal()" class="button cancel">Cancelar</a>
+						<button class="button">Salvar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>dev.finance$</p>
+	</footer>
+
+	<script src="./script.js"></script>
+</body>
+</html>
